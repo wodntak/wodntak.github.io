@@ -1,0 +1,143 @@
+.progress{
+    margin-bottom: 5vh;
+}
+
+#Korean {
+    animation: Korean 5s normal forwards;
+  }
+  
+  @keyframes Korean {
+    0% { width: 0; }
+    100% { width: 100%; }
+  }
+
+#English {
+    animation: English 5s normal forwards;
+  }
+  
+  @keyframes English {
+    0% { 
+        width: 0; 
+    }
+    100% { 
+        width: 90%; 
+    }
+  } 
+  
+#Chinese {
+    animation: Chinese 5s normal forwards;
+
+  }
+  
+  @keyframes Chinese {
+    0% { 
+        width: 0; 
+    }
+    100% { 
+        width: 25%; 
+    }
+  } 
+  
+#A{
+    animation: A 5s normal forwards;
+  }
+  
+  @keyframes A {
+    0% { 
+        width: 0; 
+    }
+    100% { 
+        width: 10%; 
+    }
+}
+
+#B{
+    animation: B 5s normal forwards;
+  }
+  
+  @keyframes B {
+    0% { 
+        width: 0; 
+    }
+    100% { 
+        width: 20%; 
+    }
+}
+
+#C{
+    animation: C 5s normal forwards;
+  }
+  
+  @keyframes C {
+    0% { 
+        width: 0; 
+    }
+    100% { 
+        width: 30%; 
+    }
+}
+
+#D{
+    animation: D 5s normal forwards;
+  }
+  
+  @keyframes D {
+    0% { 
+        width: 0; 
+    }
+    100% { 
+        width: 40%; 
+    }
+}
+
+#E{
+    animation: E 5s normal forwards;
+  }
+  
+  @keyframes E {
+    0% { 
+        width: 0; 
+    }
+    100% { 
+        width: 50%; 
+    }
+}
+
+#F{
+    animation: F 5s normal forwards;
+  }
+  
+  @keyframes F {
+    0% { 
+        width: 0; 
+    }
+    100% { 
+        width: 60%; 
+    }
+}
+
+#G{
+    animation: G 5s normal forwards;
+  }
+  
+  @keyframes G {
+    0% { 
+        width: 0; 
+    }
+    100% { 
+        width: 70%; 
+    }
+}
+
+#H{
+    animation: H 5s normal forwards;
+  }
+  
+  @keyframes H {
+    0% { 
+        width: 0; 
+    }
+    100% { 
+        width: 80%; 
+    }
+}
