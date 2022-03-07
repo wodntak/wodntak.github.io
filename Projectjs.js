@@ -26,10 +26,13 @@ function validateEmail(){
 }
 
 function submit(){
+    var form = document.getElementById("contact-form");
     var firstName = document.getElementById("firstName").value;
     var lastName = document.getElementById("lastName").value;
     var email = document.getElementById("email").value;
     var text = document.getElementById("textmessage").value;
+
+    form.reset();
 
     alert("The form was submitted \n \n" + "First Name : " + firstName + "\n Last Name : " + lastName 
     + "\n Email : " + email + "\n Message : " + text);
