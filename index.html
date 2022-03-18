@@ -572,7 +572,7 @@
 
                                   <div class="col-12 mt-3 mb-3">
                                     <button class="btn btn-grey" type="reset">Reset form</button>
-                                    <button class="btn ml-3 btn-dark" type="submit" onsubmit="submit()">Submit form</button>
+                                    <button class="btn ml-3 btn-dark" type="submit" onsubmit="submit();return false;">Submit form</button>
                                     <script>
                                         document.getElementById("contact-form").onsubmit = function() {validate()};
                                     </script>
@@ -585,17 +585,17 @@
                         <div class="col-3 mt-5">
                             <span> Connect With Me! </span>
                             <div class="container-connect">
-                                <div class="row mt-3 mb-3" style="justify-content: center;">
+                                <div class="row mt-3 mb-3" style="justify-content: center; cursor: pointer;">
                                     <img src="https://img.icons8.com/glyph-neue/64/000000/linkedin.png" onclick="linkedin()">
                                 </div>
                                 
-                                <div class="row mb-3" style="justify-content: center;">
+                                <div class="row mb-3" style="justify-content: center; cursor: pointer;">
                                     <img src="https://img.icons8.com/ios-filled/50/000000/facebook-new.png" onclick="facebook()">
                                 </div>
-                                <div class="row" style="justify-content: center;">
+                                <div class="row" style="justify-content: center; cursor: pointer;">
                                     <img src="https://img.icons8.com/glyph-neue/64/000000/instagram-new.png" onclick="instagram()">
                                 </div>
-                                <div class="row mt-2 mb-3" style="justify-content: center;">
+                                <div class="row mt-2 mb-3" style="justify-content: center; cursor: pointer;">
                                     <img src="https://img.icons8.com/glyph-neue/64/000000/handshake.png" onclick="handshake()">
                                 </div>
                             </div>

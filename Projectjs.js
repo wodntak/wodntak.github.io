@@ -31,12 +31,14 @@ function submit(){
     var lastName = document.getElementById("lastName").value;
     var email = document.getElementById("email").value;
     var text = document.getElementById("textmessage").value;
+    var page = document.getElementById("page4");
 
     form.reset();
 
     alert("The form was submitted \n \n" + "First Name : " + firstName + "\n Last Name : " + lastName 
     + "\n Email : " + email + "\n Message : " + text);
     
+    location.href="#page4";
 }
 
 function linkedin(){
