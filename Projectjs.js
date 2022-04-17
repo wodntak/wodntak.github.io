@@ -58,16 +58,29 @@ function handshake(){
 }
 
 function Register(){
-    var name = document.getElementById("fullname").value;
-    var email = document.getElementById("EmailReg").value;
+    var first = document.getElementById('fname').value;
+    var last = document.getElementById("lname").value;
     var password = document.getElementById("PasswordReg").value;
+    var regName = /^[A-Za-z]+$/;
+    var emailreg = document.getElementById("EmailReg").value;
 
-    console.log(name);
-    console.log(email);
-    console.log(password);
+    if(!regName.test(first) || !regName.test(last)){
+        alert('Invalid name given.');
+        closeregi();
+    }
+    if(!emailreg.includes(".com") && !emailreg.includes(".net") && !emailreg.includes(".edu")){
+        alert("invalid email");
+        closeregi();
+
+    }
+    else{
+        action="scripts/registrationFormResponse.php"
+    }
+
 }
 
 function Signin(){
+    action="scripts/registrationFormResponse.php"
 
 }
 
