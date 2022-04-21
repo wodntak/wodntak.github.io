@@ -92,3 +92,10 @@ function closeregi(){
     document.getElementById("register-form").reset();
 
 }
+
+function logout(){
+
+    alert("Successfully logged out");
+    location.replace("./index.php");
+                    
+}

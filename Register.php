@@ -25,12 +25,21 @@ if (mysqli_connect_errno() || ($db == null))
 $register = "INSERT INTO user (id, firstName, lastName, email, username, pass) values (NULL,'$firstname','$lastname','$email','$username','$pass')";
 
 if($db->query($register)){
-    echo "Registration success!!";
-    echo "<a href=index.php>Login</a>";
+    ?>
+    <script>
+        alert("Registration success!!");
+        location.replace("./index.php");
+    </script>
+    <?php
 }
 
 else{
-    echo "failed to register";
+    ?>
+    <script>
+        alert("Failed to register");
+        location.replace("./index.php");
+    </script>
+    <?php
 }
 
 mysqli_close($db);

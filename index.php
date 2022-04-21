@@ -182,6 +182,11 @@
 
                     </div>
                 </div> 
+                <div id="arrow">
+                    <a href="#Resume">
+                        <img src="https://img.icons8.com/ios-filled/50/000000/circled-down-2.png"> 
+                    </a>    
+                </div>
             </div>
 
             <div id ="Parallax1">
@@ -276,6 +281,11 @@
 
                     </div>
                 </a>  
+                <div id="arrow">
+                    <a href="#Skills">
+                        <img src="https://img.icons8.com/ios-filled/50/000000/circled-down-2.png"> 
+                    </a>    
+                </div>
             </div>
 
             <div id ="Parallax2">
@@ -544,6 +554,11 @@
                     </div>
                 </a>
             </div>
+            <div id="arrow">
+                    <a href="#contact">
+                        <img src="https://img.icons8.com/ios-filled/50/000000/circled-down-2.png"> 
+                    </a>    
+                </div>
             </div>
 
             <div id ="Parallax3">
@@ -553,52 +568,15 @@
             <div id="page4">
                 <a id="contact" class="smooth">
                     <h2>Contact </h2>
-                    <div class="row">
-                        <div class="col-9 mt-5">
-                            <form id="contact-form">
-                                <span style="margin-left: 9vh; font-size:17pt;"> Contact Me!</span>
-                            <div class="container-form mt-3">
-                                <div class="row g-3" style="justify-content: center;">
-                                    <div class="col-md-5">
-                                      <label for="validationDefault01" class="form-label">First name</label>
-                                      <input type="text" class="form-control" id="firstName"  value="" placeholder="First Name..." required>
-                                    </div>
-                                    <div class="col-md-5">
-                                      <label for="validationDefault02" class="form-label">Last name</label>
-                                      <input type="text" class="form-control" id="lastName" value="" placeholder="Last Name..." required>
-                                    </div>
-                                </div>
-
-                                <div class="row" style="justify-content: center;">    
-                                    <div class="col-8">
-                                        <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                                        <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
-                                    </div>
-                                </div>
-
-                                <div class="row" style="justify-content: center;">
-                                  <div class="col-8">
-                                    <label for="exampleFormControlTextarea1" class="form-label">Message</label>
-                                    <textarea class="form-control" id="textmessage" rows="4" placeholder="Type your message..." required></textarea>
-                                  </div>  
-                                </div>
-
-                                  <div class="col-12 mt-3 mb-3">
-                                    <button class="btn btn-grey" type="reset">Reset form</button>
-                                    <button class="btn ml-3 btn-dark" type="submit" onsubmit="submit();return false;">Submit form</button>
-                                    <script>
-                                        document.getElementById("contact-form").onsubmit = function() {validate()};
-                                    </script>
-                                  </div>
-                                </form>
-                                
-                            </div>
+                                      <div class="row" style="justify-content: center;">    
+                  <div class="row">
+                        
                         </div>
 
                         <div class="col-3 mt-5">
                             <span> Connect With Me! </span>
                             <div class="container-connect">
-                                <div class="row mt-3 mb-3" style="justify-content: center; cursor: pointer;">
+                                <div class="row mt-3 mb-3" style=" justify-content: center; cursor: pointer;">
                                     <img src="https://img.icons8.com/glyph-neue/64/000000/linkedin.png" onclick="linkedin()">
                                 </div>
                                 
