@@ -1,6 +1,12 @@
-<!DOCTYPE html>
-    <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1>
+ <?php
+ session_start();
+$_SESSION['click'] = "ok";
+ if($_SESSION['login'] == "OK" || $_SERVER['HTTP_REFERER'] == "http://localhost:8888/mymessages.php")  {
+
+?>
+ 
+ <!DOCTYPE html>
+        <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -46,85 +52,49 @@
                         </button>
                         
                     </div>
+                    <div class="text-center">
+                    <?php
+                         echo'<span stlye=\"color:white;\"> Login Success! <br> </span>';
+                         echo "<span style=\"color:white;\"> Welcome  "  .$_SESSION['fname']. " ".$_SESSION['lname']. "</span>";
+                         ?>
+                    </div>     
                     <div class="text-right" >
-                        <button class="btn btn btn-outline-warning m-2" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Sign in</button>
+                    <button class="btn btn btn-warning m-2" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">My Messages</button>
 
-                            <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <form id = "signin-form" action="login.php" method="post">
-                                <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Sign in</h5>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="mb-3">
-                                        <label for="Username" class="col-form-label" style="float: left;">Username:</label>
-                                        <input type="text" class="form-control" id="Username" name="username">
-                                        </div>
-                                        <div class="mb-3">
-                                        <label for="Password" class="col-form-label" style="float: left;">Password:</label>
-                                        <input type="password" class="form-control" id="Password" name="pass">
-                                        </div>
-                                    
-                                    </div>
-                                    <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="closesign()">Close</button>
-                                    <button type="submit" class="btn btn-primary" >Confirm</button>
-                                    </div>
-                                    
+                        <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <form id = "messagecheck-form" action="mymessages.php" method="post">
+                            <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Enter Username</h5>
                                 </div>
-                                </div>
-                                </form>
-                            </div>
-
-                        <button class="btn btn btn-outline-info m-2" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal1">Register</button>
-
-                            <div class="modal" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <form id = "register-form" action="Register.php" method="post">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Register</h5>
-                                            </div>
-                                            <div class="modal-body">
-                                                <div class="mb-3">
-                                                    <label for="fname" class="col-form-label" style="float: left;">First name:</label>
-                                                    <input type="text" class="form-control" id="fname" name="fname" required>
-                                                </div>
-
-                                                <div class="mb-3">
-                                                    <label for="lname" class="col-form-label" style="float: left;">Last name:</label>
-                                                    <input type="text" class="form-control" id="lname" name="lname" required>
-                                                </div>
-
-                                                <div class="mb-3">
-                                                    <label for="Username1" class="col-form-label" style="float: left;">Username:</label>
-                                                    <input type="text" class="form-control" id="Username1" name="username" required>
-                                                </div>
-
-                                                <div class="mb-3">
-                                                    <label for="EmailReg" class="col-form-label" style="float: left;">Email:</label>
-                                                    <input type="text" class="form-control" id="EmailReg" name="email" required>
-                                                </div>
-
-                                                <div class="mb-3">
-                                                    <label for="PasswordReg" class="col-form-label" style="float: left;">Password:</label>
-                                                    <input type="password" class="form-control" id="PasswordReg" name="pass" pattern="^\w{6,}$" required>
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="closeregi()">Close</button>
-                                            <button type="submit" class="btn btn-primary" onclick="Register()">Confirm</button>
-                                            </div>
-                                        </div>
+                                <div class="modal-body">
+                                    <div class="mb-3">
+                                    <label for="Username" class="col-form-label" style="float: left;">Username:</label>
+                                    <input type="text" class="form-control" id="MUsername" name="musername">
                                     </div>
-                                </form>
+                                
+                                </div>
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="closesign()">Close</button>
+                                <button type="submit" class="btn btn-primary" >Confirm</button>
+                                </div>
+                                
                             </div>
+                            </div>
+                            </form>
+                        </div>
 
-                        <button class="navbar-toggler" id="externalbutton" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
+                        <button class="btn btn-danger m-2" type="button" onclick="logout()" > Log out
+                        <?php
+                            session_start();
+                            $result = session_destroy();
+                            
+                        ?>
+                    </button>
+                    
                     </div>
-                </button>
+                    
                 </div>
             </nav>
         </header>
@@ -134,7 +104,6 @@
                 <a id="home" class="smooth">
                 </a>
                 <h1> Welcome to My Website!</h1>
-                
                 <p>Scroll below for more information!</p>
                 <div id="arrow">
                     <a href="#about">
@@ -570,15 +539,49 @@
             <div id="page4">
                 <a id="contact" class="smooth">
                     <h2>Contact </h2>
-                        <div class="row" style="justify-content: center;">    
-                  <div class="row">
-                        
+                    <div class="row">
+                        <div class="col-9 mt-5">
+                            <form id="contact-form" action="messages.php" method="post";>
+                                <span style="margin-left: 9vh; font-size:17pt;"> Contact Me!</span>
+                            <div class="container-form mt-3">
+                                <div class="row g-3" style="justify-content: center;">
+                                    <div class="col-md-5">
+                                      <label for="validationDefault01" class="form-label">First name</label>
+                                      <input type="text" class="form-control" id="mfname" name="mfname" value="" placeholder="First Name..." required>
+                                    </div>
+                                    <div class="col-md-5">
+                                      <label for="validationDefault02" class="form-label">Last name</label>
+                                      <input type="text" class="form-control" id="mlname" name="mlname" value="" placeholder="Last Name..." required>
+                                    </div>
+                                </div>
+
+                                <div class="row" style="justify-content: center;">    
+                                    <div class="col-8">
+                                        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                                        <input type="email" class="form-control" id="memail" name="memail" placeholder="name@example.com" required>
+                                    </div>
+                                </div>
+
+                                <div class="row" style="justify-content: center;">
+                                  <div class="col-8">
+                                    <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+                                    <textarea class="form-control" id="textmessage" rows="4" name="textmessage" placeholder="Type your message..." required></textarea>
+                                  </div>  
+                                </div>
+
+                                  <div class="col-12 mt-3 mb-3">
+                                    <button class="btn btn-grey" type="reset">Reset form</button>
+                                    <button class="btn ml-3 btn-dark" type="submit">Submit form</button>
+                                  </div>
+                                </form>
+                                
+                            </div>
                         </div>
 
                         <div class="col-3 mt-5">
                             <span> Connect With Me! </span>
                             <div class="container-connect">
-                                <div class="row mt-3 mb-3" style=" justify-content: center; cursor: pointer;">
+                                <div class="row mt-3 mb-3" style="justify-content: center; cursor: pointer;">
                                     <img src="https://img.icons8.com/glyph-neue/64/000000/linkedin.png" onclick="linkedin()">
                                 </div>
                                 
@@ -605,13 +608,9 @@
         <footer>
             <div class = "bg-dark p-3">
             © 2022 by Jaehyeon Yang
-                <button class="btn btn btn-outline-info m-2" type="button">
-                    <a href="#page0" style="text-decoration: none; color:white">To the Top</a>
-                </button>  
-                Total Visits: <?php 
-                include 'visit.php';
-                 ?>
-
+            <button class="btn btn btn-outline-info m-2" type="button">
+                <a href="#page0" style="text-decoration: none; color:white">To the Top</a>
+            </button>  
             </div>
         </footer>
     <!-- Javascript implementation-->
@@ -627,4 +626,11 @@
     </body>
 
 </html>
+<?php
 
+ }
+ else{
+    header("Location : error.php");
+ }
+ exit();
+ ?>

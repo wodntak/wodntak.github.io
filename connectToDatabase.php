@@ -9,7 +9,7 @@ which is outside public_html, for security reasons.
 
 $dbLocation = 'localhost';
 $dbUsername = 'root';
-$dbPassword = 'wogus8743';
+$dbPassword = 'root';
 $dbName = 'webbook';
 
 if (!isset($dbLocation))
@@ -50,11 +50,5 @@ if (mysqli_connect_errno() || ($db == null))
            Connection script now terminating.",
            mysqli_connect_error());
     exit(0);
-}
-
-if (emailAlreadyExists($db, $_POST['email']))
-{
-echo "<h3>Sorry, but your e-mail
-address is already registered.</h3>";
 }
 ?>
