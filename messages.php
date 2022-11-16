@@ -1,5 +1,7 @@
 <?php
 session_start();
+date_default_timezone_set('America/Chicago');
+
 $dbLocation = 'localhost';
 $dbUsername = 'root';
 $dbPassword = 'root';
@@ -26,7 +28,6 @@ $query = "SELECT username from user where email = '$email'";
 $result = $db -> query($query);
 $pattern = "^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$^";  
   
-
 $_SESSION['login'] = "OK";
 
 if (!preg_match ("/^[a-zA-z]*$/", $firstName) ) {

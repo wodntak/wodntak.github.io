@@ -18,6 +18,7 @@ if (mysqli_connect_errno() || ($db == null))
     exit(0);
 }
 $username = $_POST['musername'];
+echo $username;
 
 $query = "SELECT id, firstName, lastName, username, messages, dates from Msg where username = '$username' order by id desc limit 0,10";
 $result = $db -> query($query);
@@ -53,8 +54,12 @@ if($_SERVER['HTTP_REFERER'] == "http://localhost:8888/loginform.php"){
             <nav class="navbar navbar-dark bg-dark ">
                 <div class="container-fluid" >     
                     <div class="text-right" >
-                        <button class="btn btn-warning m-2" type="button" onclick="document.location.href='loginform.php'" > Back
-                        </button>
+                    <form id = "back-form" action="loginform.php" method="post">
+                        <input type="hidden" id="MUsername" name="musername" value="<?php echo $username ?>">
+                        <button class="btn btn btn-warning m-2" type="submit">Back</button>
+
+                        
+                    </form>
                     
                     </div>
                     

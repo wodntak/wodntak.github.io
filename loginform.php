@@ -1,8 +1,7 @@
  <?php
  session_start();
-$_SESSION['click'] = "ok";
- if($_SESSION['login'] == "OK" || $_SERVER['HTTP_REFERER'] == "http://localhost:8888/mymessages.php")  {
 
+if($_SESSION['login'] == "OK" || $_SERVER['HTTP_REFERER'] == "http://localhost:8888/mymessages.php")  {
 ?>
  
  <!DOCTYPE html>
@@ -53,45 +52,25 @@ $_SESSION['click'] = "ok";
                         
                     </div>
                     <div class="text-center">
-                    <?php
-                         echo'<span stlye=\"color:white;\"> Login Success! <br> </span>';
-                         echo "<span style=\"color:white;\"> Welcome  "  .$_SESSION['fname']. " ".$_SESSION['lname']. "</span>";
-                         ?>
+                        <?php
+                            echo'<span stlye=\"color:white;\"> Login Success! <br> </span>';
+                            echo "<span style=\"color:white;\"> Welcome  "  .$_SESSION['fname']. " ".$_SESSION['lname']. "</span>";
+                        ?>
                     </div>     
                     <div class="text-right" >
-                    <button class="btn btn btn-warning m-2" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">My Messages</button>
-
-                        <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <form id = "messagecheck-form" action="mymessages.php" method="post">
-                            <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Enter Username</h5>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="mb-3">
-                                    <label for="Username" class="col-form-label" style="float: left;">Username:</label>
-                                    <input type="text" class="form-control" id="MUsername" name="musername">
-                                    </div>
-                                
-                                </div>
-                                <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="closesign()">Close</button>
-                                <button type="submit" class="btn btn-primary" >Confirm</button>
-                                </div>
-                                
-                            </div>
-                            </div>
-                            </form>
-                        </div>
+                    <form id = "messagecheck-form" action="mymessages.php" method="post">
+                       
+                        <input type="hidden" id="MUsername" name="musername" value="<?php echo $_SESSION['username'] ?>">
+                        <button class="btn btn btn-warning m-2" type="submit">My Messages</button>
 
                         <button class="btn btn-danger m-2" type="button" onclick="logout()" > Log out
                         <?php
                             session_start();
                             $result = session_destroy();
-                            
                         ?>
-                    </button>
+                    </form>
+            
+                        
                     
                     </div>
                     
@@ -611,6 +590,9 @@ $_SESSION['click'] = "ok";
             <button class="btn btn btn-outline-info m-2" type="button">
                 <a href="#page0" style="text-decoration: none; color:white">To the Top</a>
             </button>  
+            Total Visits: <?php 
+                include 'visit.php';
+            ?>    
             </div>
         </footer>
     <!-- Javascript implementation-->

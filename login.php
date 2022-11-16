@@ -28,6 +28,7 @@ if(mysqli_num_rows($result) == 1){
     $row = mysqli_fetch_assoc($result);
      $_SESSION['fname'] = $row['firstName'];
      $_SESSION['lname'] = $row['lastName'];
+     $_SESSION['username'] = $username;
 
     if($row['pass'] == $pass){
         $_SESSION['username'] = $username;
