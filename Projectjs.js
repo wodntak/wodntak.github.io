@@ -2,44 +2,42 @@ function navthrough(){
     document.getElementById("externalbutton").click();
 }
 
-// function validate(){
-//     var regName = /^[A-Za-z]+$/;
-//     var firstname = document.getElementById("firstName").value;
-//     var lastname =  document.getElementById('lastName').value;
-//     if(!regName.test(firstname) || !regName.test(lastname)){
-//         alert('Invalid name given.');
-//     }
-//     else{
-//         validateEmail();
-//     }
-// }
+function validate(){
+    var regName = /^[A-Za-z]+$/;
+    var firstname = document.getElementById("firstName").value;
+    var lastname =  document.getElementById('lastName').value;
+    if(!regName.test(firstname) || !regName.test(lastname)){
+        alert('Invalid name given.');
+    }
+    else{
+        validateEmail();
+    }
+}
 
-// function validateEmail(){
-//     var email = document.getElementById("email").value;
+function validateEmail(){
+    var email = document.getElementById("email").value;
 
-//     if(!email.includes(".com") && !email.includes(".net") && !email.includes(".edu")){
-//         alert("invalid email");
-//     }
-//     else{
-//         submit();
-//     }
-// }
+    if(!email.includes(".com") && !email.includes(".net") && !email.includes(".edu")){
+        alert("invalid email");
+    }
+    else{
+        submit();
+    }
+}
 
-// function submit(){
-//     // var form = document.getElementById("contact-form");
-//     // var firstName = document.getElementById("firstName").value;
-//     // var lastName = document.getElementById("lastName").value;
-//     // var email = document.getElementById("email").value;
-//     // var text = document.getElementById("textmessage").value;
-//     // var page = document.getElementById("page4");
+function submit(){
+    var form = document.getElementById("contact-form");
+    var firstName = document.getElementById("firstName").value;
+    var lastName = document.getElementById("lastName").value;
+    var email = document.getElementById("email").value;
+    var text = document.getElementById("textmessage").value;
 
-//     // form.reset();
+    form.reset();
 
-//     // alert("The form was submitted \n \n" + "First Name : " + firstName + "\n Last Name : " + lastName 
-//     // + "\n Email : " + email + "\n Message : " + text);
+    alert("The form was submitted \n \n" + "First Name : " + firstName + "\n Last Name : " + lastName 
+    + "\n Email : " + email + "\n Message : " + text);
     
-//     // location.href="#page4";
-// }
+}
 
 function linkedin(){
     location.replace("https://www.linkedin.com/in/jaehyeon-yang-63a5b413b/");
@@ -58,26 +56,16 @@ function handshake(){
 }
 
 function Register(){
-    var first = document.getElementById('fname').value;
-    var last = document.getElementById("lname").value;
+    var name = document.getElementById("fullname").value;
+    var email = document.getElementById("EmailReg").value;
     var password = document.getElementById("PasswordReg").value;
-    var regName = /^[A-Za-z]+$/;
-    var emailreg = document.getElementById("EmailReg").value;
 
-    if(!regName.test(first) || !regName.test(last)){
-        alert('Invalid name given.');
-        closeregi();
-    }
-    if(!emailreg.includes(".com") && !emailreg.includes(".net") && !emailreg.includes(".edu")){
-        alert("invalid email");
-        closeregi();
-
-    }
-
+    console.log(name);
+    console.log(email);
+    console.log(password);
 }
 
 function Signin(){
-   // action="scripts/registrationFormResponse.php"
 
 }
 
@@ -88,11 +76,4 @@ function closesign(){
 function closeregi(){
     document.getElementById("register-form").reset();
 
-}
-
-function logout(){
-
-    alert("Successfully logged out");
-    location.replace("./index.php");
-                    
 }

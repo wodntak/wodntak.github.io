@@ -12,7 +12,7 @@ h2{
     padding-top: 11vh;
     font-weight: bold;
     color: darkred;
-    font-size: 35px;
+    font-size: 30px;
     font-family: fantasy;
 }
 
@@ -27,14 +27,14 @@ h1{
     padding-top: 25vh;
     color: white;
     text-align: center;
-    font-size: 60pt;
+    font-size: 50pt;
 }
 
 p{
     padding-top: 10vh;
     color: lightgoldenrodyellow;
     text-align: center;
-    font-size: 30pt;
+    font-size: 20pt;
 }
 
 #arrow{
@@ -223,25 +223,3 @@ span{
 .modal-backdrop {
     z-index: 0;
   }
-
-.list-table {
-    text-align:center;
-
-	margin-top: 40px;
-    margin-left: auto;
-    margin-right: auto;
-}
-.list-table thead th{
-    text-align:center;
-	height:40px;
-	border-top:2px solid #09C;
-	border-bottom:1px solid #CCC;
-	font-weight: bold;
-	font-size: 17px;
-}
-.list-table tbody td{
-	text-align:center;
-	padding:10px 0;
-	border-bottom:1px solid #CCC; height:20px;
-	font-size: 14px 
-}
